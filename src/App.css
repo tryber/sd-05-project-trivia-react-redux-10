@@ -20,19 +20,28 @@
 }
 
 .App-game {
-  background-image: linear-gradient(45deg,#00052B, #2C357A, #6B74C3, #0D3692, #000932, blue,white);
-  display:flex;
+  background-image: linear-gradient(
+    45deg,
+    #00052b,
+    #2c357a,
+    #6b74c3,
+    #0d3692,
+    #000932,
+    blue,
+    white
+  );
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
 .App-game-header {
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0,0,0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   min-height: 10vh;
   font-weight: 600;
   box-shadow: 0 5px 40px black;
@@ -64,7 +73,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: shake infinite 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    animation: shake infinite 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   }
 }
 
@@ -84,19 +93,24 @@
 }
 
 @keyframes shake {
-  10%, 90% {
+  10%,
+  90% {
     transform: translate3d(-1px, 0, 0);
   }
 
-  20%, 80% {
+  20%,
+  80% {
     transform: translate3d(2px, 0, 0);
   }
 
-  30%, 50%, 70% {
+  30%,
+  50%,
+  70% {
     transform: translate3d(-4px, 0, 0);
   }
 
-  40%, 60% {
+  40%,
+  60% {
     transform: translate3d(4px, 0, 0);
   }
 }

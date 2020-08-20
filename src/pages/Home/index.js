@@ -24,7 +24,7 @@ class Home extends React.Component {
     if(LS) {
       setCurrentToken(LS)
     } */
-    console.log(encrypted('mhhomma@gmail.com'))
+    console.log(encrypted('mhhomma@gmail.com'));
   }
 
   handleChange(e) {
@@ -35,22 +35,21 @@ class Home extends React.Component {
   }
 
   handleClick() {
-   const { setCurrentToken, setImgPath, setName } = this.props;
-   const { email, player } = this.state
-   tokenAPI()
-   .then(data => {
-     setCurrentToken(data.token);
-     localStorage.setItem('token', data.token);
-   });
-   setImgPath(encrypted(email));
-   setName(player);
+    const { setCurrentToken, setImgPath, setName } = this.props;
+    const { email, player } = this.state;
+    tokenAPI().then((data) => {
+      setCurrentToken(data.token);
+      localStorage.setItem('token', data.token);
+    });
+    setImgPath(encrypted(email));
+    setName(player);
   }
-  
+
   render() {
     const { tokenStr } = this.props;
-    const { player, email } = this.state
-    const condition = ((player) && (email))? false:true;
-    if(tokenStr) return <Redirect to='/game' />
+    const { player, email } = this.state;
+    const condition = player && email ? false : true;
+    if (tokenStr) return <Redirect to="/game" />;
     return (
       <div className="App">
         <header className="App-header">
@@ -59,7 +58,7 @@ class Home extends React.Component {
         <main className="App-main">
           <label htmlFor="nome">Nome</label>
           <input
-            name='player'
+            name="player"
             type="text"
             id="nome"
             data-testid="input-player-name"
@@ -67,19 +66,23 @@ class Home extends React.Component {
           />
           <label htmlFor="email">E-mail</label>
           <input
-            name='email'
+            name="email"
             type="text"
             id="email"
             data-testid="input-gravatar-email"
             onChange={this.handleChange}
           />
-            <button onClick={() => this.handleClick()} data-testid="btn-play" disabled={condition}>
+          <button
+            onClick={() => this.handleClick()}
+            data-testid="btn-play"
+            disabled={condition}>
             Jogar
+          </button>
+          <Link to="/settings">
+            <button data-testid="btn-settings" onClick={this.settings}>
+              Configurações
             </button>
-            <Link to='/settings'>
-            <button data-testid='btn-settings' onClick={this.settings}>Configurações</button>
-            </Link>
-            
+          </Link>
         </main>
       </div>
     );
@@ -88,12 +91,12 @@ class Home extends React.Component {
 
 const mapStateToProps = (state) => ({
   tokenStr: state.setToken.token,
-})
+});
 
 const mapDispatchToProps = (dispatch) => ({
   setCurrentToken: (e) => dispatch(getToken(e)),
   setImgPath: (e) => dispatch(getImg(e)),
   setName: (e) => dispatch(getName(e)),
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
