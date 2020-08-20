@@ -8,6 +8,51 @@
   pointer-events: none;
   margin-top: 50px;
 }
+.App-main {
+  background-color: #282c34;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-game {
+  background-image: linear-gradient(45deg,#00052B, #2C357A, #6B74C3, #0D3692, #000932, blue,white);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-game-header {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0, 0.5);
+  min-height: 10vh;
+  font-weight: 600;
+  box-shadow: 0 5px 40px black;
+  color: white;
+  width: 100%;
+}
+
+.App-game-body {
+  min-height: 90vh;
+  color: white;
+  width: 100%;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  padding: 0 100px;
+}
+
+.profile-score {
+}
 
 .red-border {
   border: 1px solid red;
@@ -24,17 +69,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 50vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-main {
   background-color: #282c34;
   min-height: 50vh;
   display: flex;
