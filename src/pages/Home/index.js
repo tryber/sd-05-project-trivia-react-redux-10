@@ -283,4 +283,642 @@ const mapDispatchToProps = (dispatch) => ({
   setName: (e) => dispatch(getName(e)),
 })
 
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
+
+const mapStateToProps = (state) => ({
+  tokenStr: state.setToken.token,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentToken: (e) => dispatch(getToken(e)),
+  setImgPath: (e) => dispatch(getImg(e)),
+  setName: (e) => dispatch(getName(e)),
+})
+
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
