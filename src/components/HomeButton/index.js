@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 class HomeButton extends React.Component {
   render() {
-    const { play, condition } = this.props
+    const { play, condition } = this.props;
     return (
       <div>
         <button
@@ -19,8 +20,13 @@ class HomeButton extends React.Component {
           </button>
         </Link>
       </div>
-    )
+    );
   }
 }
+
+HomeButton.propTypes = {
+  play: PropTypes.func.isRequired,
+  condition: PropTypes.bool.isRequired,
+};
 
 export default HomeButton;
