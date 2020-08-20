@@ -8,15 +8,15 @@ import Game from './pages/Game';
 export default function App() {
   return (
     <BrowserRouter>
-      <Link to='/'>Home</Link>
+      <Link to="/">Home</Link>
       <br />
-      <Link to='/settings'>Settings</Link>
+      <Link to="/settings">Settings</Link>
       <br />
-      <Link to='/game'>Game</Link>
+      <Link to="/game">Game</Link>
       <Switch>
-        <Route exact path='/' component={Home} />
-        <Route path='/settings' component={Settings} />
-        <Route path='/game' component={Game} />
+        <Route exact path="/" component={Home} />
+        <Route path="/settings" component={Settings} />
+        <Route path="/game" component={Game} />
       </Switch>
     </BrowserRouter>
   );

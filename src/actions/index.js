@@ -7,18 +7,18 @@ export const getToken = (token) => ({
   type: GET_TOKEN,
   token,
 });
- 
+
 export const getName = (name) => ({
   type: GET_NAME,
   name,
 });
 
-export const getScore = (score) =>({
+export const getScore = (score) => ({
   type: GET_SCORE,
   score,
 });
 
-export const getImg = (imgPath) =>({
+export const getImg = (imgPath) => ({
   type: GET_IMG,
   imgPath,
 });
