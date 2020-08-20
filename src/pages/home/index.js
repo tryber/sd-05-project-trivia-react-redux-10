@@ -34,7 +34,7 @@ class Home extends React.Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
         </header>
-        <main>
+        <main className="App-main">
           <label htmlFor="nome">Nome</label>
           <input
             name='player'
