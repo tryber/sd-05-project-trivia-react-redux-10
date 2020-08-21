@@ -10,9 +10,6 @@ class HomeButton extends React.Component {
         <button onClick={play} data-testid="btn-play" disabled={condition}>
           Jogar
         </button>
-        <Link to="/settings">
-          <button data-testid="btn-settings">Configurações</button>
-        </Link>
       </div>
     );
   }

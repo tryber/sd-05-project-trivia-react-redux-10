@@ -9,16 +9,8 @@ import scoreCalculation from '../../Services/scoreCalculation';
 import GameHeader from '../../components/GameHeader';
 import Answers from '../../components/Answers';
 import Question from '../../components/Question';
+import Feedback from '../Feedback';
 import music from './suspense.mp3';
-
-const lsState = {
-  player: {
-    name: '',
-    assertions: 0,
-    score: 0,
-    gravatarEmail: '',
-  },
-};
 
 class Game extends React.Component {
   constructor(props) {
@@ -40,19 +32,12 @@ class Game extends React.Component {
     const timer = setInterval(this.tick, 1000);
     const { token } = this.props;
     let oldToken = token;
-    const savedToken = localStorage.getItem('token');
-    if (savedToken) {
-      oldToken = savedToken;
-    }
-    if (oldToken) {
-      questionAPI(oldToken).then((data) =>
+    questionAPI(oldToken).then((data) =>
         this.setState({
           response: data.results,
           timer,
         }),
       );
-    }
-    localStorage.setItem('state', JSON.stringify(lsState));
   }
 
   componentWillUnmount() {
@@ -67,6 +52,7 @@ class Game extends React.Component {
       this.setState({
         DA: true,
         time: 0,
+        showAnswer: true,
       });
     } else {
       this.setState({
@@ -113,14 +99,14 @@ class Game extends React.Component {
   }
 
   render() {
-    const { iCPath, cScore, cName } = this.props;
+    // const { iCPath, cScore, cName } = this.props;
     const { response, QN, time, showAnswer, DA } = this.state;
     if (response.length < 1) return <h1>Loading...</h1>;
-    if (QN > 4) return <h1>Jogue Novamente</h1>;
+    if (QN > 4) return <Feedback />;
     const dif = response[QN].difficulty;
     return (
       <div className="App-game">
-        <GameHeader cName={cName} iCPath={iCPath} cScore={cScore} />
+        <GameHeader />
         <main className="App-game-body">
           <ReactAudioPlayer autoPlay loop src={music} volume={0.2} />
           <div className="question-box-container">
@@ -158,7 +144,6 @@ Game.propTypes = {
   cEmail: PropTypes.string.isRequired,
   cName: PropTypes.string.isRequired,
   cScore: PropTypes.number.isRequired,
-  iCPath: PropTypes.string.isRequired,
   token: PropTypes.string.isRequired,
   setCurrentScore: PropTypes.func.isRequired,
 };

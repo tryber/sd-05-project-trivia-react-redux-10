@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import ReactAudioPlayer from 'react-audio-player';
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import logo from '../../trivia.png';
 import { tokenAPI } from '../../Services/apiFunctions';
@@ -48,13 +48,20 @@ class Home extends React.Component {
     });
     setImgPath(encrypted(email));
     setUser(player, email);
+    const newState = {
+      player: {
+        name: player,
+        assertions: 0,
+        score: 0,
+        email,
+      },
+    };
+    localStorage.setItem('state', JSON.stringify(newState));
   }
 
   render() {
-    const { tokenStr } = this.props;
     const { player, email } = this.state;
     const condition = !player || !email;
-    if (tokenStr) return <Redirect to="/game" />;
     return (
       <div className="App">
         <header className="App-header">
@@ -65,7 +72,12 @@ class Home extends React.Component {
           <label htmlFor="nome">Nome</label>
           <Input name="player" onChange={this.handleChange} />
           <Input name="email" onChange={this.handleChange} />
-          <HomeButton play={this.handleClick} condition={condition} />
+          <Link to="/game">
+            <HomeButton play={this.handleClick} condition={condition} />
+          </Link>
+          <Link to="/settings">
+            <button data-testid="btn-settings">Configurações</button>
+          </Link>
         </main>
       </div>
     );
@@ -84,7 +96,6 @@ const mapDispatchToProps = (dispatch) => ({
 Home.propTypes = {
   setCurrentToken: PropTypes.func.isRequired,
   setImgPath: PropTypes.func.isRequired,
-  tokenStr: PropTypes.string.isRequired,
   setUser: PropTypes.func.isRequired,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
