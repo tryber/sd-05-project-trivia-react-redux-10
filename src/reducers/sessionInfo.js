@@ -1,9 +1,4 @@
-import {
-  GET_TOKEN,
-  GET_SCORE,
-  GET_IMG,
-  GET_NAME,
-} from '../actions';
+import { GET_TOKEN, GET_SCORE, GET_IMG, GET_NAME } from '../actions';
 
 const TOKEN_INITIAL = {
   token: '',
@@ -43,4 +38,3 @@ const setToken = (state = TOKEN_INITIAL, action) => {
   }
 };
 export default setToken;
-

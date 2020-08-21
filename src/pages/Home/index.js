@@ -1,13 +1,15 @@
 import PropTypes from 'prop-types';
+import ReactAudioPlayer from 'react-audio-player';
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import logo from '../../trivia.png';
-import tokenAPI from '../../Services/apiFunctions';
+import { tokenAPI } from '../../Services/apiFunctions';
 import { getToken, getImg, getName } from '../../actions';
 import encrypted from '../../Services/encryption';
 import Input from '../../components/Input';
 import HomeButton from '../../components/HomeButton';
+import sound from './abertura.mp3';
 
 class Home extends React.Component {
   constructor(props) {
@@ -22,11 +24,11 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    /* const { setCurrentToken } = this.props
-const LS = localStorage.getItem('token')
-if(LS) {
-setCurrentToken(LS)
-} */
+    const { setCurrentToken } = this.props;
+    const LS = localStorage.getItem('token');
+    if (LS) {
+      setCurrentToken(LS);
+    }
     console.log(encrypted('mhhomma@gmail.com'));
   }
 
@@ -51,7 +53,7 @@ setCurrentToken(LS)
   render() {
     const { tokenStr } = this.props;
     const { player, email } = this.state;
-    const condition = (!player || !email);
+    const condition = !player || !email;
     if (tokenStr) return <Redirect to="/game" />;
     return (
       <div className="App">
@@ -59,7 +61,7 @@ setCurrentToken(LS)
           <img src={logo} className="App-logo" alt="logo" />
         </header>
         <main className="App-main">
-          {/* <sound /> */}
+          <ReactAudioPlayer autoPlay loop src={sound} volume={0.2} />
           <label htmlFor="nome">Nome</label>
           <Input name="player" onChange={this.handleChange} />
           <Input name="email" onChange={this.handleChange} />

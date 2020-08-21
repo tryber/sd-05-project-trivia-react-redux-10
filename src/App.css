@@ -6,6 +6,7 @@
   height: 40vmin;
   pointer-events: none;
 }
+
 .App-main {
   background-color: #282c34;
   min-height: 50vh;
@@ -42,14 +43,15 @@
   min-height: 90vh;
   color: white;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 .profile-pic {
   border-radius: 50%;
   padding: 0 100px;
-}
-
-.profile-score {
 }
 
 .red-border {
@@ -97,4 +99,41 @@
   40%, 60% {
     transform: translate3d(4px, 0, 0);
   }
+}
+
+.answer {
+  background-image: linear-gradient(20deg,
+    rgb(104, 27, 27),
+    rgb(167, 16, 16),
+    rgb(179, 52, 52),
+    rgb(190, 9, 9));
+  border: 2px solid white;
+  border-collapse: collapse;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px black;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 20px 5px;
+  width: 450px;
+}
+
+.question-box {
+  background-color: white;
+  background-image: linear-gradient(20deg,
+    rgb(104, 27, 27),
+    rgb(167, 16, 16),
+    rgb(179, 52, 52),
+    rgb(190, 9, 9));
+  border: 2px solid white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px black;
+  color: white;
+  flex-direction: column;
+  font-weight: 600;
+  margin: 40px;
+  padding: 20px;
+  text-align: center;
+  width: 400px;
 }
