@@ -31,7 +31,7 @@ class Game extends React.Component {
   componentDidMount() {
     const timer = setInterval(this.tick, 1000);
     const { token } = this.props;
-    let oldToken = token;
+    const oldToken = token;
     questionAPI(oldToken).then((data) =>
         this.setState({
           response: data.results,
