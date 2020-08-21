@@ -40,7 +40,7 @@ class Answers extends React.Component {
             disabled={dis}
             data-testid={
               each === response[QN].correct_answer
-                ? 'right-answer'
+                ? 'correct-answer'
                 : `wrong-answer-${index}`
             }
           >

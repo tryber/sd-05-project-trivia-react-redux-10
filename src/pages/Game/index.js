@@ -94,7 +94,7 @@ class Game extends React.Component {
               onClick={this.answerClick}
               dis={DA}
             />
-            <button className="next">Próxima</button>
+            {showAnswer && <button className="next" data-testid="btn-next">Próxima</button>}
           </div>
         </main>
       </div>
