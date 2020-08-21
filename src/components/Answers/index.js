@@ -19,18 +19,23 @@ function classes(showAnswer, each, response, QN, dis) {
   return newClass;
 }
 
+function answers(response, QN) {
+  const answer = response[QN].incorrect_answers;
+  if (answer.length === 1 || answer.length === 3) {
+    answer.splice(
+      Math.round(Math.random() * 4),
+      0,
+      response[QN].correct_answer,
+    );
+  }
+  return answer;
+}
+
 class Answers extends React.Component {
   render() {
-    const { response, QN, showAnswer, onClick, dis } = this.props;
+    const { response, QN, showAnswer, onClick, dis, name } = this.props;
     if (response.length < 1) return <h1>Loading...</h1>;
-    const answer = response[QN].incorrect_answers;
-    if (answer.length === 1 || answer.length === 3) {
-      answer.splice(
-        Math.round(Math.random() * 4),
-        0,
-        response[QN].correct_answer,
-      );
-    }
+    const answer = answers(response, QN);
     return (
       <div className="answers">
         {answer.map((each, index) => (
@@ -38,10 +43,14 @@ class Answers extends React.Component {
             className={`${classes(showAnswer, each, response, QN, dis)}`}
             onClick={onClick}
             disabled={dis}
+            id={each === response[QN].correct_answer ? 'correct' : 'wrong'}
+            name={name}
             data-testid={
               each === response[QN].correct_answer
-                ? 'correct-answer'
-                : `wrong-answer-${index}`
+              ?
+              'correct-answer'
+              :
+              `wrong-answer-${index}`
             }
           >
             {each}
@@ -58,6 +67,7 @@ Answers.propTypes = {
   showAnswer: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
   dis: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default Answers;

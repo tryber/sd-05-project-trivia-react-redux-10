@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { questionAPI } from '../../Services/apiFunctions.js';
 import { getScore } from '../../actions';
 import './style.css';
-// import scoreCalculation from '../../Services/scoreCalculation';
+import scoreCalculation from '../../Services/scoreCalculation';
 import GameHeader from '../../components/GameHeader';
 import Answers from '../../components/Answers';
 import Question from '../../components/Question';
@@ -24,6 +24,7 @@ class Game extends React.Component {
     };
     this.answerClick = this.answerClick.bind(this);
     this.tick = this.tick.bind(this);
+    this.btnNext = this.btnNext.bind(this);
   }
 
   componentDidMount() {
@@ -64,11 +65,29 @@ class Game extends React.Component {
     }
   }
 
-  answerClick() {
-    const { timer } = this.state;
+  answerClick(e) {
+    const { id, name } = e.target;
+    const { timer, time } = this.state;
+    const { currentScore, setCurrentScore } = this.props;
     clearInterval(timer);
     this.setState({
       showAnswer: true,
+    });
+    const newScore = scoreCalculation(time, name) + currentScore;
+    if (id === 'correct') {
+      setCurrentScore(newScore);
+    }
+  }
+
+  btnNext() {
+    const timer = setInterval(this.tick, 1000);
+    const { QN } = this.state;
+    this.setState({
+      QN: QN + 1,
+      showAnswer: false,
+      time: 30,
+      timer,
+      DA: false,
     });
   }
 
@@ -76,13 +95,11 @@ class Game extends React.Component {
     const { imgCurrentPath, currentScore, currentName } = this.props;
     const { response, QN, time, showAnswer, DA } = this.state;
     if (response.length < 1) return <h1>Loading...</h1>;
+    if (QN > 4) return <h1>Jogue Novamente</h1>;
+    const dif = response[QN].difficulty;
     return (
       <div className="App-game">
-        <GameHeader
-          currentName={currentName}
-          imgCurrentPath={imgCurrentPath}
-          currentScore={currentScore}
-        />
+        <GameHeader cName={currentName} iCPath={imgCurrentPath} cScore={currentScore} />
         <main className="App-game-body">
           <ReactAudioPlayer autoPlay loop src={music} volume={0.2} />
           <div className="question-box-container">
@@ -90,11 +107,15 @@ class Game extends React.Component {
             <Answers
               response={response}
               QN={QN}
+              name={dif}
               showAnswer={showAnswer}
-              onClick={this.answerClick}
+              onClick={(e) => this.answerClick(e)}
               dis={DA}
             />
-            {showAnswer && <button className="next" data-testid="btn-next">Próxima</button>}
+            {showAnswer &&
+            <button className="next" data-testid="btn-next" onClick={this.btnNext}>
+              Próxima
+            </button>}
           </div>
         </main>
       </div>
@@ -103,9 +124,9 @@ class Game extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  imgCurrentPath: state.setToken.imgPath,
-  currentScore: state.setToken.score,
-  currentName: state.setToken.name,
+  iCPath: state.setToken.imgPath,
+  cScore: state.setToken.score,
+  cName: state.setToken.name,
   token: state.setToken.token,
 });
 const mapDispatchToProps = (dispatch) => ({
@@ -116,5 +137,6 @@ Game.propTypes = {
   currentScore: PropTypes.number.isRequired,
   imgCurrentPath: PropTypes.string.isRequired,
   token: PropTypes.string.isRequired,
+  setCurrentScore: PropTypes.func.isRequired,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Game);

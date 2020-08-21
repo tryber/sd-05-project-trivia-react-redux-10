@@ -11,7 +11,7 @@ export default function scoreCalculation(time, dif) {
       difValue = 1;
       break;
     default:
-      return (10 + (time * difValue));
+      return 10;
   }
-  return difValue;
+  return ((difValue * time) + 10);
 }
