@@ -17,7 +17,7 @@ class Game extends React.Component {
     this.state = {
       response: [],
       QN: 0,
-      time: 5,
+      time: 30,
       showAnswer: false,
       timer: null,
       DA: false,
