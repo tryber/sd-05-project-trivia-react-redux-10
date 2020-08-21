@@ -33,7 +33,7 @@ function answers(response, QN) {
 
 class Answers extends React.Component {
   render() {
-    const { response, QN, showAnswer, onClick, dis, name } = this.props;
+    const { response, QN, showAnswer, onClick, dis, dif } = this.props;
     if (response.length < 1) return <h1>Loading...</h1>;
     const answer = answers(response, QN);
     return (
@@ -44,7 +44,7 @@ class Answers extends React.Component {
             onClick={onClick}
             disabled={dis}
             id={each === response[QN].correct_answer ? 'correct' : 'wrong'}
-            name={name}
+            name={dif}
             data-testid={
               each === response[QN].correct_answer
               ?
@@ -67,7 +67,7 @@ Answers.propTypes = {
   showAnswer: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
   dis: PropTypes.bool.isRequired,
-  name: PropTypes.string.isRequired,
+  dif: PropTypes.string.isRequired,
 };
 
 export default Answers;

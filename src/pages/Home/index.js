@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import logo from '../../trivia.png';
 import { tokenAPI } from '../../Services/apiFunctions';
-import { getToken, getImg, getName } from '../../actions';
+import { getToken, getImg, getUser } from '../../actions';
 import encrypted from '../../Services/encryption';
 import Input from '../../components/Input';
 import HomeButton from '../../components/HomeButton';
@@ -24,12 +24,11 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    const { setCurrentToken } = this.props;
+   /*  const { setCurrentToken } = this.props;
     const LS = localStorage.getItem('token');
     if (LS) {
       setCurrentToken(LS);
-    }
-    console.log(encrypted('mhhomma@gmail.com'));
+    } */
   }
 
   handleChange(e) {
@@ -40,14 +39,15 @@ class Home extends React.Component {
   }
 
   handleClick() {
-    const { setCurrentToken, setImgPath, setName } = this.props;
+    const { setCurrentToken, setImgPath, setUser } = this.props;
     const { email, player } = this.state;
+    console.log(email, player);
     tokenAPI().then((data) => {
       setCurrentToken(data.token);
       localStorage.setItem('token', data.token);
     });
     setImgPath(encrypted(email));
-    setName(player);
+    setUser(player, email);
   }
 
   render() {
@@ -79,12 +79,12 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   setCurrentToken: (e) => dispatch(getToken(e)),
   setImgPath: (e) => dispatch(getImg(e)),
-  setName: (e) => dispatch(getName(e)),
+  setUser: (a, b) => dispatch(getUser(a, b)),
 });
 Home.propTypes = {
   setCurrentToken: PropTypes.func.isRequired,
   setImgPath: PropTypes.func.isRequired,
-  setName: PropTypes.func.isRequired,
   tokenStr: PropTypes.string.isRequired,
+  setUser: PropTypes.func.isRequired,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

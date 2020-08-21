@@ -11,6 +11,15 @@ import Answers from '../../components/Answers';
 import Question from '../../components/Question';
 import music from './suspense.mp3';
 
+const lsState = {
+  player: {
+    name: '',
+    assertions: 0,
+    score: 0,
+    gravatarEmail: '',
+  },
+};
+
 class Game extends React.Component {
   constructor(props) {
     super(props);
@@ -43,6 +52,7 @@ class Game extends React.Component {
         }),
       );
     }
+    localStorage.setItem('state', JSON.stringify(lsState));
   }
 
   componentWillUnmount() {
@@ -68,13 +78,24 @@ class Game extends React.Component {
   answerClick(e) {
     const { id, name } = e.target;
     const { timer, time } = this.state;
-    const { currentScore, setCurrentScore } = this.props;
+    const test = JSON.parse(localStorage.getItem('state'));
+    console.log(test);
+    const { cScore, cName, setCurrentScore, cEmail } = this.props;
     clearInterval(timer);
     this.setState({
       showAnswer: true,
     });
-    const newScore = scoreCalculation(time, name) + currentScore;
+    const newScore = scoreCalculation(time, name) + cScore;
     if (id === 'correct') {
+      const newState = {
+        player: {
+          name: cName,
+          assertions: test.player.assertions + 1,
+          score: newScore,
+          email: cEmail,
+        },
+      };
+      localStorage.setItem('state', JSON.stringify(newState));
       setCurrentScore(newScore);
     }
   }
@@ -92,14 +113,14 @@ class Game extends React.Component {
   }
 
   render() {
-    const { imgCurrentPath, currentScore, currentName } = this.props;
+    const { iCPath, cScore, cName } = this.props;
     const { response, QN, time, showAnswer, DA } = this.state;
     if (response.length < 1) return <h1>Loading...</h1>;
     if (QN > 4) return <h1>Jogue Novamente</h1>;
     const dif = response[QN].difficulty;
     return (
       <div className="App-game">
-        <GameHeader cName={currentName} iCPath={imgCurrentPath} cScore={currentScore} />
+        <GameHeader cName={cName} iCPath={iCPath} cScore={cScore} />
         <main className="App-game-body">
           <ReactAudioPlayer autoPlay loop src={music} volume={0.2} />
           <div className="question-box-container">
@@ -107,7 +128,7 @@ class Game extends React.Component {
             <Answers
               response={response}
               QN={QN}
-              name={dif}
+              dif={dif}
               showAnswer={showAnswer}
               onClick={(e) => this.answerClick(e)}
               dis={DA}
@@ -128,14 +149,16 @@ const mapStateToProps = (state) => ({
   cScore: state.setToken.score,
   cName: state.setToken.name,
   token: state.setToken.token,
+  cEmail: state.setToken.email,
 });
 const mapDispatchToProps = (dispatch) => ({
   setCurrentScore: (e) => dispatch(getScore(e)),
 });
 Game.propTypes = {
-  currentName: PropTypes.string.isRequired,
-  currentScore: PropTypes.number.isRequired,
-  imgCurrentPath: PropTypes.string.isRequired,
+  cEmail: PropTypes.string.isRequired,
+  cName: PropTypes.string.isRequired,
+  cScore: PropTypes.number.isRequired,
+  iCPath: PropTypes.string.isRequired,
   token: PropTypes.string.isRequired,
   setCurrentScore: PropTypes.func.isRequired,
 };
