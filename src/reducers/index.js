@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import setToken from './sessionInfo';
-import gameReducer from './sessionInfo';
+import gameReducer from './gameReducer';
 
 const rootReducer = combineReducers({
   setToken,

@@ -1,23 +1,19 @@
-import { GET_QUESTION, GET_ANSWER } from '../actions';
+import { RANK_ME } from '../actions';
 
 const INITIAL_GAME = {
-  answer: '',
-  question: '',
+  rank: [],
 };
-const startedGame = (state = INITIAL_GAME, actions) => {
-  switch (actions.type) {
-    case GET_QUESTION:
+
+const startedGame = (state = INITIAL_GAME, action) => {
+  switch (action.type) {
+    case RANK_ME:
       return {
         ...state,
-        question: actions.question,
-      };
-    case GET_ANSWER:
-      return {
-        ...state,
-        answer: actions.answer,
+        rank: [...state.rank, action.gameInfo],
       };
     default:
       return state;
   }
 };
+
 export default startedGame;

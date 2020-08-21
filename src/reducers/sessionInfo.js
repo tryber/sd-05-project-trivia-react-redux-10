@@ -20,7 +20,7 @@ const setToken = (state = TOKEN_INITIAL, action) => {
       return { ...state, imgPath: action.imgPath };
     }
     case GET_USER: {
-      return { ...state, name: action.name, email: action.email };
+      return { ...state, name: action.name, email: action.email, score: action.score };
     }
     default:
       return state;

@@ -3,7 +3,7 @@ import React from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 import { connect } from 'react-redux';
 import { questionAPI } from '../../Services/apiFunctions.js';
-import { getScore } from '../../actions';
+import { getScore, rankMe } from '../../actions';
 import './style.css';
 import scoreCalculation from '../../Services/scoreCalculation';
 import GameHeader from '../../components/GameHeader';
@@ -66,7 +66,7 @@ class Game extends React.Component {
     const { timer, time } = this.state;
     const test = JSON.parse(localStorage.getItem('state'));
     console.log(test);
-    const { cScore, cName, setCurrentScore, cEmail } = this.props;
+    const { cScore, cName, iCPath, setCurrentScore, cEmail } = this.props;
     clearInterval(timer);
     this.setState({
       showAnswer: true,
@@ -79,6 +79,7 @@ class Game extends React.Component {
           assertions: test.player.assertions + 1,
           score: newScore,
           email: cEmail,
+          imagePath: iCPath,
         },
       };
       localStorage.setItem('state', JSON.stringify(newState));
@@ -89,6 +90,7 @@ class Game extends React.Component {
   btnNext() {
     const timer = setInterval(this.tick, 1000);
     const { QN } = this.state;
+    const { setLSInfo } = this.props;
     this.setState({
       QN: QN + 1,
       showAnswer: false,
@@ -96,10 +98,14 @@ class Game extends React.Component {
       timer,
       DA: false,
     });
+    if ((QN + 1) > 4) {
+      const tempInfo = JSON.parse(localStorage.getItem('state'));
+      console.log(tempInfo);
+      setLSInfo(tempInfo.player);
+    }
   }
 
   render() {
-    // const { iCPath, cScore, cName } = this.props;
     const { response, QN, time, showAnswer, DA } = this.state;
     if (response.length < 1) return <h1>Loading...</h1>;
     if (QN > 4) return <Feedback />;
@@ -139,6 +145,7 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   setCurrentScore: (e) => dispatch(getScore(e)),
+  setLSInfo: (b) => dispatch(rankMe(b)),
 });
 Game.propTypes = {
   cEmail: PropTypes.string.isRequired,
@@ -146,5 +153,7 @@ Game.propTypes = {
   cScore: PropTypes.number.isRequired,
   token: PropTypes.string.isRequired,
   setCurrentScore: PropTypes.func.isRequired,
+  setLSInfo: PropTypes.func.isRequired,
+  iCPath: PropTypes.string.isRequired,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Game);

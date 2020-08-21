@@ -3,7 +3,7 @@ import ReactAudioPlayer from 'react-audio-player';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import logo from '../../trivia.png';
+import logo from '../../assets/images/trybetrivia.png';
 import { tokenAPI } from '../../Services/apiFunctions';
 import { getToken, getImg, getUser } from '../../actions';
 import encrypted from '../../Services/encryption';
@@ -47,7 +47,7 @@ class Home extends React.Component {
       localStorage.setItem('token', data.token);
     });
     setImgPath(encrypted(email));
-    setUser(player, email);
+    setUser(player, email, 0);
     const newState = {
       player: {
         name: player,
@@ -91,7 +91,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   setCurrentToken: (e) => dispatch(getToken(e)),
   setImgPath: (e) => dispatch(getImg(e)),
-  setUser: (a, b) => dispatch(getUser(a, b)),
+  setUser: (a, b, c) => dispatch(getUser(a, b, c)),
 });
 Home.propTypes = {
   setCurrentToken: PropTypes.func.isRequired,

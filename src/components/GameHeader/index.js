@@ -7,7 +7,7 @@ class GameHeader extends React.Component {
     const { currentName, imgCurrentPath, currentScore } = this.props;
     return (
       <header className="App-game-header">
-        <h4 data-testid="header-player-name">{currentName}</h4>
+        <h3 data-testid="header-player-name">{currentName}</h3>
         <img
           className="profile-pic"
           data-testid="header-profile-picture"
