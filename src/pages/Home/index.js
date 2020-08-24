@@ -3,13 +3,14 @@ import ReactAudioPlayer from 'react-audio-player';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import logo from '../../assets/images/trybetrivia.png';
+import logo from '../../assets/images/seisbraco.png';
 import { tokenAPI } from '../../Services/apiFunctions';
 import { getToken, getImg, getUser } from '../../actions';
 import encrypted from '../../Services/encryption';
 import Input from '../../components/Input';
 import HomeButton from '../../components/HomeButton';
 import sound from './abertura.mp3';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Home extends React.Component {
   constructor(props) {
@@ -68,16 +69,19 @@ class Home extends React.Component {
           <img src={logo} className="App-logo" alt="logo" />
         </header>
         <main className="App-main">
-          <ReactAudioPlayer autoPlay loop src={sound} volume={0.2} />
-          <label htmlFor="nome">Nome</label>
-          <Input name="player" onChange={this.handleChange} />
-          <Input name="email" onChange={this.handleChange} />
+          <ReactAudioPlayer loop src={sound} volume={0.2} />
+          <label htmlFor="nome"></label>
+          <div className="d-flex flex-column login">
+          <Input name="player" placeholder="digite seu nome" onChange={this.handleChange} />
+          <Input name="email" placeholder="digite seu e-mail" onChange={this.handleChange} />
           <Link to="/game">
             <HomeButton play={this.handleClick} condition={condition} />
           </Link>
           <Link to="/settings">
-            <button data-testid="btn-settings">Configurações</button>
+            <button className='btn btn-secondary' data-testid="btn-settings">Configurações</button>
           </Link>
+
+          </div>
         </main>
       </div>
     );

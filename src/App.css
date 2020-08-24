@@ -1,21 +1,46 @@
+body {
+  background-image: url('./assets/images/matrix.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
   pointer-events: none;
+  margin-top: 2%;
+  width: 20%;
 }
 
 .App-main {
-  background-color: #282c34;
-  min-height: 50vh;
+  margin-top: 50px;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.login {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 20px;
+  width: 20vw;
+}
+
+.btn-text-jogar {
+  font-weight: 900 !important;
+}
+
+.inputs {
+  text-align: center; 
+  font-size: 18px !important;
+  padding: 0 !important;
+  border: 1px solid black !important;
 }
 
 .App-game {
@@ -32,7 +57,6 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(0,0,0, 0.5);
-  min-height: 10vh;
   font-weight: 600;
   box-shadow: 0 5px 40px black;
   color: white;
@@ -40,7 +64,6 @@
 }
 
 .App-game-body {
-  min-height: 90vh;
   color: white;
   width: 100%;
   display: flex;
@@ -64,13 +87,11 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: shake infinite 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    animation: blink infinite 0.82s cubic-bezier(.36,.07,.19,.97) both;
   }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
