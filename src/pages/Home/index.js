@@ -26,7 +26,7 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-   /*  const { setCurrentToken } = this.props;
+    /*  const { setCurrentToken } = this.props;
     const LS = localStorage.getItem('token');
     if (LS) {
       setCurrentToken(LS);
@@ -73,14 +73,26 @@ class Home extends React.Component {
           <ReactAudioPlayer autoPlay loop src={sound} volume={0.2} />
           <label htmlFor="nome"></label>
           <div className="d-flex flex-column login">
-          <Input name="player" placeholder="digite seu nome" onChange={this.handleChange} />
-          <Input name="email" placeholder="digite seu e-mail" onChange={this.handleChange} />
-          <Link to="/game">
-            <HomeButton play={this.handleClick} condition={condition} />
-          </Link>
-          <Link to="/settings">
-            <button className='btn btn-secondary btn-text-config' data-testid="btn-settings">Configurações</button>
-          </Link>
+            <Input
+              name="player"
+              placeholder="digite seu nome"
+              onChange={this.handleChange}
+            />
+            <Input
+              name="email"
+              placeholder="digite seu e-mail"
+              onChange={this.handleChange}
+            />
+            <Link to="/game">
+              <HomeButton play={this.handleClick} condition={condition} />
+            </Link>
+            <Link to="/settings">
+              <button
+                className="btn btn-secondary btn-text-config"
+                data-testid="btn-settings">
+                Configurações
+              </button>
+            </Link>
           </div>
           <Footer />
         </main>
