@@ -34,7 +34,7 @@ body {
   background: rgba(0, 0, 0, 0.6);
   padding: 20px;
   border-radius: 20px;
-  width: 20vw;
+  width: 30vw;
 }
 
 .btn-text-jogar {
@@ -60,19 +60,30 @@ body {
 .feedbackP {
   font-family: 'Bungee', cursive;
   border-radius: 25px;
-  margin-left: 35%;
-  margin-right:35%;
   margin-top:10%;
   background: rgba(0, 0, 0, 0.6);
   color: white;
   border: 3px solid blue;
   border-style: ridge;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  justify-content: center;
-  align-items: center;
+  height: 300px;
+  padding: 20px;
+  width: 30%;
 }
+
+.ranking {
+  font-family: 'Bungee', cursive;
+  border-radius: 25px;
+  margin-top:10%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: 3px solid blue;
+  border-style: ridge;
+  height: 300px;
+  padding: 20px;
+  width: 30%;
+}
+
+
 .ranking-table  {
   text-align: center;
   display: table;
@@ -91,7 +102,7 @@ body {
   border: 1px solid black !important;
   font-family: 'Bungee', cursive;
   color: black !important;
-  
+  width: 80%;
 }
 
 .App-game {/* 

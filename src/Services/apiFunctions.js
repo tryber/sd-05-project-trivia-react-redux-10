@@ -5,16 +5,14 @@ export function tokenAPI() {
   return fetchAPI;
 }
 export function questionAPI(token, configs) {
-  const { nQuestoes, cat, dificuldade, tipo, encode } = configs
+  const { nQuestoes, cat, dificuldade, tipo, encode } = configs;
 
-  console.log("CONFIGURACOES", configs)
-  console.log("N QUESTOES", nQuestoes)
+  console.log('CONFIGURACOES', configs);
+  console.log('N QUESTOES', cat);
+  let url = `https://opentdb.com/api.php?amount=${nQuestoes}${(cat !== 'any')? `&category=${cat}`:''}${(dificuldade !== 'any')? `&difficulty=${dificuldade}`:''}${(tipo !== 'any')? `&type=${tipo}`:''}${(encode !== 'default')? `&category=${encode}`:''}&token=${token}`
+    console.log(url)
+  
 
-
-  if(cat === 'any' && dificuldade === 'any' && tipo === 'any' && encode === 'default') {
-    const fetchAPI = fetch(
-      `https://opentdb.com/api.php?amount=${nQuestoes}&token=${token}`,
-    ).then((resolve) => resolve.json());
-    return fetchAPI;
-  }
+  const fetchAPI = fetch(url).then((resolve) => resolve.json());
+  return fetchAPI;
 }
