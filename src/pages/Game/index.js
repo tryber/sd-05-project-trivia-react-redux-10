@@ -36,14 +36,11 @@ class Game extends React.Component {
 
   componentDidMount() {
     const timer = setInterval(this.tick, 1000);
-    const { token } = this.props;
-    const oldToken = token;
-    questionAPI(oldToken).then((data) =>
-        this.setState({
-          response: data.results,
-          timer,
-        }),
-      );
+    const { token, allConfig, questions } = this.props;
+    console.log('MONTEI');
+    this.setState({
+    timer,
+    });
   }
 
   componentWillUnmount() {
@@ -102,7 +99,7 @@ class Game extends React.Component {
   btnNext() {
     const timer = setInterval(this.tick, 1000);
     const { QN } = this.state;
-    const { setLSInfo } = this.props;
+    const { setLSInfo, questions } = this.props;
     this.setState({
       QN: QN + 1,
       showAnswer: false,
@@ -112,17 +109,18 @@ class Game extends React.Component {
       certa: false,
       errada: false,
     });
-    if ((QN + 1) > 4) {
+    if ((QN + 1) > questions.length - 1) {
       const tempInfo = JSON.parse(localStorage.getItem('state'));
       setLSInfo(tempInfo.player);
     }
   }
 
   render() {
-    const { response, QN, time, showAnswer, DA, certa, errada } = this.state;
-    if (response.length < 1) return <h1>Loading...</h1>;
-    if (QN > 4) return <Feedback />;
-    const dif = response[QN].difficulty;
+    const { QN, time, showAnswer, DA, certa, errada } = this.state;
+    const { questions } = this.props
+    if (questions.length < 1) return <h1>Loading...</h1>;
+    if (QN > questions.length - 1) return <Feedback />;
+    const dif = questions[QN].difficulty;
     console.log(this.state);
     return (
       <div className="App-game App">
@@ -132,9 +130,9 @@ class Game extends React.Component {
           <div className="question-box-container ">
           {certa && <ReactAudioPlayer autoPlay src={certaRes} />}
           {errada && <ReactAudioPlayer autoPlay src={quePena} />}
-            <Question response={response} time={time} QN={QN} />
+            <Question response={questions} time={time} QN={QN} />
             <Answers
-              response={response}
+              response={questions}
               QN={QN}
               dif={dif}
               showAnswer={showAnswer}
@@ -159,11 +157,13 @@ const mapStateToProps = (state) => ({
   cName: state.setToken.name,
   token: state.setToken.token,
   cEmail: state.setToken.email,
+  questions: state.setToken.allQuestoes,
 });
 const mapDispatchToProps = (dispatch) => ({
   setCurrentScore: (e) => dispatch(getScore(e)),
   setLSInfo: (b) => dispatch(rankMe(b)),
 });
+
 Game.propTypes = {
   cEmail: PropTypes.string.isRequired,
   cName: PropTypes.string.isRequired,

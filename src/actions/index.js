@@ -5,6 +5,7 @@ export const GET_NAME = 'GET_NAME';
 export const RANK_ME = 'RANK_ME';
 export const GET_USER = 'GET_USER';
 export const SET_CONFIG = 'SET_CONFIG';
+export const GET_QUESTIONS = 'GET_QUESTIONS';
 
 export const getToken = (token) => ({
   type: GET_TOKEN,
@@ -33,12 +34,16 @@ export const rankMe = (gameInfo) => ({
   gameInfo,
 });
 
-export const setConfig = (cat, dificuldade, tipo, encode ) => ({
+export const setConfig = (nQuestoes, cat, dificuldade, tipo, encode) => ({
   type: SET_CONFIG,
-  config: {
-    cat,
-    dificuldade,
-    tipo,
-    encode,
-  }
+  nQuestoes,
+  cat,
+  dificuldade,
+  tipo,
+  encode,
+});
+
+export const getQuestions = (allQuestoes) => ({
+  type: GET_QUESTIONS,
+  allQuestoes,
 })

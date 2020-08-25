@@ -24,7 +24,7 @@ function answers(response, QN) {
   const answer = response[QN].incorrect_answers;
   if (answer.length === 1 || answer.length === 3) {
     answer.splice(
-      Math.round(Math.random() * 4),
+      Math.round(Math.random() * (response[QN].incorrect_answers.length + 1)),
       0,
       response[QN].correct_answer,
     );
