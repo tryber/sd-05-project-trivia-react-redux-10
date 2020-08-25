@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import decoder from '../../Services/decoder'
 
 function classes(showAnswer, each, response, QN, dis) {
   let newClass;
@@ -53,7 +54,7 @@ class Answers extends React.Component {
               `wrong-answer-${index}`
             }
           >
-            {each}
+            {decoder(each)}
           </button>
         ))}
       </div>

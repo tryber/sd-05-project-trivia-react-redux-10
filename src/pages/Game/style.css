@@ -67,6 +67,11 @@
   width: 200px;
 }
 
+.next:hover {
+  color: black;
+  background-color: white;
+}
+
 .disabled {
   background-color: rgb(93, 92, 92);
   background-image: none;

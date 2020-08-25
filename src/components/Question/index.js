@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import decoder from '../../Services/decoder'
 
 class Question extends React.Component {
   render() {
@@ -8,7 +9,7 @@ class Question extends React.Component {
       <div className="question-box-container">
         <div className="question-box">
           <p data-testid="question-category">{response[QN].category}</p>
-          <p data-testid="question-text">{response[QN].question}</p>
+          <p data-testid="question-text">{decoder(response[QN].question)}</p>
         </div>
         <p
           className={`time-container ${time < 10 ? 'hurry-up' : 'normal'}`}
