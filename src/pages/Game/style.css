@@ -2,7 +2,6 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  font-size: 20px;
   margin-top: 10px;
 }
 
@@ -10,7 +9,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin: 30px;
+  margin: 0 0 15px;
 }
 
 .question-number {
@@ -30,14 +29,14 @@
   color: black;
   font-size: 16px;
   font-weight: 600;
-  margin: 5px;
   padding: 5px;
   text-align: center;
   width: 200px;
 }
 
 .hurry-up {
-  color: red;
+  background-color: red;
+  color: white;
 }
 
 .right-answer {
@@ -76,7 +75,7 @@
 
 .pName {
   color: white;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 900;
   font-family: 'Bungee', cursive;
   margin-top: 20px;
@@ -84,13 +83,13 @@
 
 .pScore {
   color: white;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 900;
   font-family: 'Bungee', cursive;
-  margin-top: 20px;
 }
 
 .head-size {
   padding: 0 30px;
   width: 300px;
+  margin-top: 10px;
 }
