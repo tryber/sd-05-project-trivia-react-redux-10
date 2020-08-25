@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import GameHeader from '../../components/GameHeader';
+import gif1 from '../../assets/images/gif1.gif';
+import gif2 from '../../assets/images/gif2.gif'
 
 class Feedback extends React.Component {
   constructor(props) {
@@ -28,11 +30,15 @@ class Feedback extends React.Component {
     const { assertions, score } = this.state;
     return (
       <div>
-        <GameHeader />
+      <GameHeader />
+        <div className='feedbackP'>
+        <div>  
         {assertions < 3 ? (
-          <div data-testid="feedback-text">Podia ser melhor...</div>
+          <div data-testid="feedback-text">
+            <img src={gif2} width='50px' height='50px'/>Podia ser melhor...</div>
         ) : (
-          <div data-testid="feedback-text">Mandou bem!</div>
+          <div data-testid="feedback-text">
+            <img src={gif1} width='50px' height='50px' />Mandou bem!</div>
         )}
         <div>
           Right <span data-testid="feedback-total-question">{assertions}</span>{' '}
@@ -52,6 +58,8 @@ class Feedback extends React.Component {
           </button>
         </Link>
       </div>
+    </div>
+    </div>
     );
   }
 }

@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   font-size: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .answers {
@@ -45,27 +45,52 @@
   background-image: none;
   border: 3px solid rgb(6, 240, 15);
   color: black;
+  margin: 5px;
 }
 
 .wrong-answer {
   background-color: red;
   border: 3px solid red;
   color: white;
+  margin: 5px;
 }
 
 .next {
-  background-color: green;
+  background-color: black;
   border-radius: 10px;
+  border: 2px solid white;
   box-shadow: 5px 5px 10px black;
   color: white;
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
-  padding: 30px;
+  padding: 15px;
   width: 200px;
 }
 
 .disabled {
   background-color: rgb(93, 92, 92);
   background-image: none;
+  color: black;
+}
+
+.pName {
+  color: white;
+  font-size: 20px;
+  font-weight: 900;
+  font-family: 'Bungee', cursive;
+  margin-top: 20px;
+}
+
+.pScore {
+  color: white;
+  font-size: 20px;
+  font-weight: 900;
+  font-family: 'Bungee', cursive;
+  margin-top: 20px;
+}
+
+.head-size {
+  padding: 0 30px;
+  width: 300px;
 }

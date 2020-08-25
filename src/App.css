@@ -6,16 +6,16 @@ body {
 
 .App {
   text-align: center;
+  color: rgb(204, 204, 204);
 }
 
 .App-logo {
   pointer-events: none;
   margin-top: 2%;
-  width: 20%;
+  width: 25%;
 }
 
 .App-main {
-  margin-top: 50px;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -36,15 +36,48 @@ body {
   font-weight: 900 !important;
 }
 
+.btn-text-config {
+  color: white !important;
+  font-weight: 900 !important;
+  background: black !important;
+}
+.feedbackP {
+  border-radius: 25px;
+  margin-left: 30%;
+  margin-right:30%;
+  margin-top:10%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: 3px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+}
+.ranking-table  {
+  text-align: center;
+  display: table;
+    border-collapse: separate;
+    border-spacing: 5px;
+    border-color: gray;
+  
+}
+.gravImg {
+  border-radius: 25px;
+}
 .inputs {
   text-align: center; 
-  font-size: 18px !important;
+  font-size: 16px !important;
   padding: 0 !important;
   border: 1px solid black !important;
+  font-family: 'Bungee', cursive;
+  color: black !important;
+  
 }
 
-.App-game {
-  background-image: linear-gradient(45deg,#00052B, #2C357A, #6B74C3, #0D3692, #000932, blue,white);
+.App-game {/* 
+  background-image: linear-gradient(45deg,#00052B, #2C357A, #6B74C3, #0D3692, #000932, blue,white); */
   display:flex;
   flex-direction: column;
   align-items: center;
@@ -52,10 +85,6 @@ body {
 }
 
 .App-game-header {
-  display:flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   background-color: rgba(0,0,0, 0.5);
   font-weight: 600;
   box-shadow: 0 5px 40px black;
@@ -74,7 +103,7 @@ body {
 
 .profile-pic {
   border-radius: 50%;
-  padding: 0 100px;
+  margin-top: 20px;
 }
 
 .red-border {
@@ -123,38 +152,79 @@ body {
 }
 
 .answer {
-  background-image: linear-gradient(20deg,
-    rgb(104, 27, 27),
-    rgb(167, 16, 16),
-    rgb(179, 52, 52),
-    rgb(190, 9, 9));
+  background-color: black;
   border: 2px solid white;
   border-collapse: collapse;
-  border-radius: 10px;
   box-shadow: 5px 5px 10px black;
-  color: white;
+  color: rgb(15, 248, 15);
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
-  padding: 20px 5px;
-  width: 450px;
+  padding: 12px 5px;
+  width: 600px;
+  margin: 5px;
 }
 
 .question-box {
   background-color: white;
-  background-image: linear-gradient(20deg,
-    rgb(104, 27, 27),
-    rgb(167, 16, 16),
-    rgb(179, 52, 52),
-    rgb(190, 9, 9));
+  background-color: black;
   border: 2px solid white;
-  border-radius: 10px;
   box-shadow: 5px 5px 10px black;
-  color: white;
+  color: rgb(15, 248, 15);
   flex-direction: column;
   font-weight: 600;
-  margin: 40px;
-  padding: 20px;
+  margin: 10px;
+  padding: 30px;
   text-align: center;
-  width: 400px;
+  width: 600px;
+}
+
+
+.glitch {
+  color: rgb(223, 191, 191);
+  position: relative;
+  font-size: 9vw;
+  margin: 30px 200px;
+  animation: glitch 2s 2s infinite;
+}
+
+.glitch::before {
+  content: attr(data-text);
+  position: absolute;
+  left: -2px;
+  text-shadow: -5px 0 magenta;
+  background: black;
+  overflow: hidden;
+  top: 0;
+  animation: noise-1 3s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
+}
+
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 2px;
+  text-shadow: -5px 0 lightgreen;
+  background: black;
+  overflow: hidden;
+  top: 0;
+  animation: noise-2 3s linear infinite alternate-reverse, glitch 5s 5s infinite;
+}
+
+@keyframes glitch {
+  1%{
+    transform: rotateX(10deg) skewX(90deg);
+  }
+  2%{
+    transform: rotateX(0deg) skewX(0deg);
+  }
+}
+
+.footer {
+  background: rgba(0, 0, 0, 0.85);
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  font-family: 'Bungee', cursive;
+  font-size: 15px;
+  padding: 20px 0 0;
 }

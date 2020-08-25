@@ -9,7 +9,8 @@ import { getToken, getImg, getUser } from '../../actions';
 import encrypted from '../../Services/encryption';
 import Input from '../../components/Input';
 import HomeButton from '../../components/HomeButton';
-import sound from './abertura.mp3';
+import sound from './abertura2.mp3';
+import Footer from '../../components/footer/Footer.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Home extends React.Component {
@@ -66,10 +67,10 @@ class Home extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src={logo} className="App-logo glitch" alt="logo" />
         </header>
         <main className="App-main">
-          <ReactAudioPlayer loop src={sound} volume={0.2} />
+          <ReactAudioPlayer autoPlay loop src={sound} volume={0.2} />
           <label htmlFor="nome"></label>
           <div className="d-flex flex-column login">
           <Input name="player" placeholder="digite seu nome" onChange={this.handleChange} />
@@ -78,10 +79,10 @@ class Home extends React.Component {
             <HomeButton play={this.handleClick} condition={condition} />
           </Link>
           <Link to="/settings">
-            <button className='btn btn-secondary' data-testid="btn-settings">Configurações</button>
+            <button className='btn btn-secondary btn-text-config' data-testid="btn-settings">Configurações</button>
           </Link>
-
           </div>
+          <Footer />
         </main>
       </div>
     );

@@ -10,7 +10,11 @@ import GameHeader from '../../components/GameHeader';
 import Answers from '../../components/Answers';
 import Question from '../../components/Question';
 import Feedback from '../Feedback';
+import Footer from '../../components/footer/Footer.js';
 import music from './suspense.mp3';
+import certaRes from './certaResposta.mp3'
+import quePena from './quePena.mp3'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Game extends React.Component {
   constructor(props) {
@@ -22,6 +26,8 @@ class Game extends React.Component {
       showAnswer: false,
       timer: null,
       DA: false,
+      certa: false,
+      errada: false,
     };
     this.answerClick = this.answerClick.bind(this);
     this.tick = this.tick.bind(this);
@@ -65,7 +71,6 @@ class Game extends React.Component {
     const { id, name } = e.target;
     const { timer, time } = this.state;
     const test = JSON.parse(localStorage.getItem('state'));
-    console.log(test);
     const { cScore, cName, iCPath, setCurrentScore, cEmail } = this.props;
     clearInterval(timer);
     this.setState({
@@ -84,6 +89,13 @@ class Game extends React.Component {
       };
       localStorage.setItem('state', JSON.stringify(newState));
       setCurrentScore(newScore);
+      this.setState({
+        certa: true,
+      })
+    } else {
+      this.setState({
+        errada: true,
+      })
     }
   }
 
@@ -97,25 +109,29 @@ class Game extends React.Component {
       time: 30,
       timer,
       DA: false,
+      certa: false,
+      errada: false,
     });
     if ((QN + 1) > 4) {
       const tempInfo = JSON.parse(localStorage.getItem('state'));
-      console.log(tempInfo);
       setLSInfo(tempInfo.player);
     }
   }
 
   render() {
-    const { response, QN, time, showAnswer, DA } = this.state;
+    const { response, QN, time, showAnswer, DA, certa, errada } = this.state;
     if (response.length < 1) return <h1>Loading...</h1>;
     if (QN > 4) return <Feedback />;
     const dif = response[QN].difficulty;
+    console.log(this.state);
     return (
-      <div className="App-game">
+      <div className="App-game App">
         <GameHeader />
         <main className="App-game-body">
           <ReactAudioPlayer autoPlay loop src={music} volume={0.2} />
-          <div className="question-box-container">
+          <div className="question-box-container ">
+          {certa && <ReactAudioPlayer autoPlay src={certaRes} />}
+          {errada && <ReactAudioPlayer autoPlay src={quePena} />}
             <Question response={response} time={time} QN={QN} />
             <Answers
               response={response}
@@ -126,11 +142,12 @@ class Game extends React.Component {
               dis={DA}
             />
             {showAnswer &&
-            <button className="next" data-testid="btn-next" onClick={this.btnNext}>
+            <button className="next btn" data-testid="btn-next" onClick={this.btnNext}>
               Próxima
             </button>}
           </div>
         </main>
+        <Footer />
       </div>
     );
   }
