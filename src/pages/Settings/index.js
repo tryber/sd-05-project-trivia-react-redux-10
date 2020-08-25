@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { setConfig } from '../../actions';
+import ReactAudioPlayer from 'react-audio-player';
+import underground from './underground.mp3';
 import { Link } from 'react-router-dom';
 
 class Settings extends React.Component {
@@ -29,6 +31,7 @@ class Settings extends React.Component {
 
     return (
       <div className="d-flex flex-column justify-content-center settings-container">
+        <ReactAudioPlayer autoPlay loop src={underground} volume={0.5} />
         <div className="text-center">
           <h1 data-testid="settings-title" className="settings-title">
             Settings

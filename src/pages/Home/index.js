@@ -74,7 +74,7 @@ class Home extends React.Component {
           <img src={logo} className="App-logo glitch" alt="logo" />
         </header>
         <main className="App-main">
-          <ReactAudioPlayer autoPlay loop src={sound} volume={0.2} />
+          <ReactAudioPlayer autoPlay loop src={sound} volume={0.5} />
           <label htmlFor="nome"></label>
           <div className="d-flex flex-column login">
             <Input
