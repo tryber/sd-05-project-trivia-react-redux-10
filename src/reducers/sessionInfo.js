@@ -1,4 +1,4 @@
-import { GET_TOKEN, GET_SCORE, GET_IMG, GET_USER } from '../actions';
+import { GET_TOKEN, GET_SCORE, GET_IMG, GET_USER, GET_QUESTIONS } from '../actions';
 
 const TOKEN_INITIAL = {
   token: '',
@@ -6,6 +6,7 @@ const TOKEN_INITIAL = {
   imgPath: '',
   name: '',
   email: '',
+  allQuestoes: []
 };
 
 const setToken = (state = TOKEN_INITIAL, action) => {
@@ -21,6 +22,9 @@ const setToken = (state = TOKEN_INITIAL, action) => {
     }
     case GET_USER: {
       return { ...state, name: action.name, email: action.email, score: action.score };
+    }
+    case GET_QUESTIONS: {
+      return { ...state, allQuestoes: action.allQuestoes}
     }
     default:
       return state;
