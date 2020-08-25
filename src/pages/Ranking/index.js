@@ -14,12 +14,12 @@ class Ranking extends React.Component {
     const { rank } = this.props;
     const ranked = order(rank);
     return (
-      <div>
+      <div className='feedbackP'>
         <div data-testid="ranking-title">Ranking</div>
         <Link to="/">
           <button type="button" data-testid="btn-go-home">Home</button>
         </Link>
-        <table>
+        <table className='ranking-table'>
           <thead>
             <tr>
               <th>Name</th>
@@ -33,7 +33,7 @@ class Ranking extends React.Component {
                 <td data-testid={`player-name-${index}`}>{each.name}</td>
                 <td>{each.assertions}</td>
                 <td data-testid={`player-score-${index}`}>{each.score}</td>
-                <td><img src={`https://www.gravatar.com/avatar/${each.imagePath}`} alt="img" /></td>
+                <td><img className='gravImg'src={`https://www.gravatar.com/avatar/${each.imagePath}`} alt="img" /></td>
               </tr>
             ))}
           </tbody>
