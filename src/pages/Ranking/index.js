@@ -21,7 +21,7 @@ class Ranking extends React.Component {
       <div className='feedbackP'>
         <h1 className="rankingTitle" data-testid="ranking-title">Ranking
         <img src={trophy} width='60px' height='60px'/></h1>
-        <ReactAudioPlayer autoPlay loop src={champions} volume={0.6} />
+        <ReactAudioPlayer autoPlay loop src={champions} volume={0.9} />
         <Link to="/">
           <button type="button" data-testid="btn-go-home">Home</button>
         </Link>

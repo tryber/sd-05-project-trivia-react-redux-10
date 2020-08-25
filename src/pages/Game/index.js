@@ -128,7 +128,7 @@ class Game extends React.Component {
       <div className="App-game App">
         <GameHeader />
         <main className="App-game-body">
-          <ReactAudioPlayer autoPlay loop src={music} volume={0.2} />
+          <ReactAudioPlayer autoPlay loop src={music} volume={0.5} />
           <div className="question-box-container ">
           {certa && <ReactAudioPlayer autoPlay src={certaRes} />}
           {errada && <ReactAudioPlayer autoPlay src={quePena} />}
