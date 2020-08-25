@@ -12,8 +12,8 @@ import Question from '../../components/Question';
 import Feedback from '../Feedback';
 import Footer from '../../components/footer/Footer.js';
 import music from './suspense.mp3';
-import certaRes from './certaResposta.mp3'
-import quePena from './quePena.mp3'
+import certaRes from './certaResposta.mp3';
+import quePena from './quePena.mp3';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Game extends React.Component {
