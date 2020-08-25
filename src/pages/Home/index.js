@@ -69,7 +69,7 @@ class Home extends React.Component {
     const { player, email } = this.state;
     const condition = !player || !email;
     return (
-      <div className="App">
+      <div className="App d-flex flex-column justify-content-center">
         <header className="App-header">
           <img src={logo} className="App-logo glitch" alt="logo" />
         </header>

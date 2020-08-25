@@ -7,6 +7,8 @@ import gif2 from '../../assets/images/gif2.gif';
 import Footer from '../../components/footer/Footer.js';
 import sound from './levelComplete.mp3';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { getQuestions } from '../../actions';
+import { connect } from 'react-redux';
 
 class Feedback extends React.Component {
   constructor(props) {
@@ -16,6 +18,7 @@ class Feedback extends React.Component {
       score: 0,
     };
     this.starter = this.starter.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -28,6 +31,11 @@ class Feedback extends React.Component {
       assertions: data.player.assertions,
       score: data.player.score,
     });
+  }
+
+  handleClick() {
+    const { questions } = this.props
+    questions([])
   }
 
   render() {
@@ -58,12 +66,12 @@ class Feedback extends React.Component {
               <span data-testid="feedback-total-score">{score}</span>
             </div>
             <Link to="/">
-              <button className="btn btn-primary feedbackBut" type="button" data-testid="btn-play-again">
+              <button className="btn btn-primary feedbackBut" type="button" data-testid="btn-play-again" onClick={this.handleClick}>
                 Jogar Novamente
               </button>
             </Link>
             <Link to="/ranking">
-              <button className="btn btn-primary feedbackBut" type="button" data-testid="btn-ranking">
+              <button className="btn btn-primary feedbackBut" type="button" data-testid="btn-ranking" onClick={this.handleClick}>
                 Ranking
               </button>
             </Link>
@@ -75,4 +83,8 @@ class Feedback extends React.Component {
   }
 }
 
-export default Feedback;
+const mapDispatchToProps = (dispatch) => ({
+  questions: (a) => dispatch(getQuestions(a)),
+})
+
+export default connect(null, mapDispatchToProps)(Feedback);
