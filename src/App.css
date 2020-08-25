@@ -41,11 +41,22 @@ body {
   font-weight: 900 !important;
 }
 
+.btn-text-jogar:hover {
+  background-color: green !important;
+  color: white !important;
+}
+
 .btn-text-config {
   color: white !important;
   font-weight: 900 !important;
   background: black !important;
 }
+
+.btn-text-config:hover {
+  background-color: yellow !important;
+  color: black !important;
+}
+
 .feedbackP {
   border-radius: 25px;
   margin-left: 30%;
@@ -165,10 +176,14 @@ body {
   color: rgb(15, 248, 15);
   cursor: pointer;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   padding: 12px 5px;
   width: 600px;
   margin: 5px;
+}
+
+.answer:hover {
+  transform: scale(1.15);
 }
 
 .question-box {
