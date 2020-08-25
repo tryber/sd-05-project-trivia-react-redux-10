@@ -65,7 +65,6 @@ class Game extends React.Component {
     const { id, name } = e.target;
     const { timer, time } = this.state;
     const test = JSON.parse(localStorage.getItem('state'));
-    console.log(test);
     const { cScore, cName, iCPath, setCurrentScore, cEmail } = this.props;
     clearInterval(timer);
     this.setState({
