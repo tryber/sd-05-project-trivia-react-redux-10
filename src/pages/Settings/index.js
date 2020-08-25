@@ -1,15 +1,107 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { setConfig } from '../../actions';
 
 class Settings extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cat: 'any',
+      dificuldade: 'any',
+      tipo: 'any',
+      encode: 'default'
+    };
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange(e) {
+    console.log(e.target.name)
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value,
+    })
+  }
+
   render() {
+    const { cat, dificuldade, tipo, encode } = this.state;
+    console.log(this.state);
+
     return (
-      <div>
-        <div>
-          <h1 data-testid="settings-title">Settings</h1>
+      <div className="d-flex flex-column justify-content-center settings-container">
+        <div className="text-center">
+          <h1 data-testid="settings-title" className="settings-title">
+            Settings
+          </h1>
+        </div>
+        <div className="d-flex justify-content-center">
+          <div className="settings text-center">
+            <label for="cat">Selecione a Categoria: </label>
+            <select name="cat" className="form-control" onChange={this.handleChange}>
+              <option value="any">Any Category</option>
+              <option value="9">General Knowledge</option>
+              <option value="10">Entertainment: Books</option>
+              <option value="11">Entertainment: Film</option>
+              <option value="12">Entertainment: Music</option>
+              <option value="13">Entertainment: Musicals &amp; Theatres</option>
+              <option value="14">Entertainment: Television</option>
+              <option value="15">Entertainment: Video Games</option>
+              <option value="16">Entertainment: Board Games</option>
+              <option value="17">Science &amp; Nature</option>
+              <option value="18">Science: Computers</option>
+              <option value="19">Science: Mathematics</option>
+              <option value="20">Mythology</option>
+              <option value="21">Sports</option>
+              <option value="22">Geography</option>
+              <option value="23">History</option>
+              <option value="24">Politics</option>
+              <option value="25">Art</option>
+              <option value="26">Celebrities</option>
+              <option value="27">Animals</option>
+              <option value="28">Vehicles</option>
+              <option value="29">Entertainment: Comics</option>
+              <option value="30">Science: Gadgets</option>
+              <option value="31">
+                {`Entertainment: Japanese Anime & Manga`}
+              </option>
+              <option value="32">
+                {`Entertainment: Cartoon & Animations`}
+              </option>
+            </select>
+            <label for="dificuldade">Selecione a Dificuldade: </label>
+            <select name="dificuldade" className="form-control" onChange={this.handleChange}>
+              <option value="any">Any Difficulty</option>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+            <label for="tipo">Seleciona o Tipo de Pergunta: </label>
+            <select name="tipo" className="form-control" onChange={this.handleChange}>
+              <option value="any">Any Type</option>
+              <option value="multiple">Multiple Choice</option>
+              <option value="boolean">True / False</option>
+            </select>
+            <label for="encode">Selecione o Encode: </label>
+            <select name="encode" className="form-control" onChange={this.handleChange}>
+              <option value="default">Default Encoding</option>
+              <option value="urlLegacy">Legacy URL Encoding</option>
+              <option value="url3986">URL Encoding (RFC 3986)</option>
+              <option value="base64">Base64 Encoding</option>
+            </select>
+            <br></br>
+            <button className="btn btn-lg btn-primary btn-block" type="submit">
+              Filtrar as perguntas
+            </button>
+          </div>
+          <div></div>
+          <div></div>
         </div>
       </div>
     );
   }
 }
 
-export default Settings;
+const mapDispatchToProps = (dispatch) => ({
+  settings: (a, b, c, d) => dispatch(setConfig(a, b, c, d)),
+});
+
+export default connect(null, mapDispatchToProps)(Settings);
