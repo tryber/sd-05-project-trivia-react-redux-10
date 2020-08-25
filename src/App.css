@@ -39,6 +39,7 @@ body {
 
 .btn-text-jogar {
   font-weight: 900 !important;
+  width: 100%;
 }
 
 .btn-text-jogar:hover {
@@ -50,6 +51,7 @@ body {
   color: white !important;
   font-weight: 900 !important;
   background: black !important;
+  width: 100%;
 }
 
 .btn-text-config:hover {
