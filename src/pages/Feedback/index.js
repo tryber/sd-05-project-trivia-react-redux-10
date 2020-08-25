@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ReactAudioPlayer from 'react-audio-player';
 import GameHeader from '../../components/GameHeader';
 import gif1 from '../../assets/images/gif1.gif';
-import gif2 from '../../assets/images/gif2.gif'
+import gif2 from '../../assets/images/gif2.gif';
+import Footer from '../../components/footer/Footer.js';
+import sound from './levelComplete.mp3';
 
 class Feedback extends React.Component {
   constructor(props) {
@@ -30,9 +33,10 @@ class Feedback extends React.Component {
     const { assertions, score } = this.state;
     return (
       <div>
+      <ReactAudioPlayer autoPlay src={sound} volume={0.9} />
       <GameHeader />
         <div className='feedbackP'>
-        <div>  
+        <div>
         {assertions < 3 ? (
           <div data-testid="feedback-text">
             <img src={gif2} width='50px' height='50px'/>Podia ser melhor...</div>
@@ -41,11 +45,10 @@ class Feedback extends React.Component {
             <img src={gif1} width='50px' height='50px' />Mandou bem!</div>
         )}
         <div>
-          Right <span data-testid="feedback-total-question">{assertions}</span>{' '}
-          Answer
+          Right Answer: <span data-testid="feedback-total-question">{assertions}</span>{' '}
         </div>
         <div>
-          Total<span data-testid="feedback-total-score">{score}</span> score
+          Total Score: <span data-testid="feedback-total-score">{score}</span>
         </div>
         <Link to="/">
           <button type="button" data-testid="btn-play-again">
@@ -59,6 +62,7 @@ class Feedback extends React.Component {
         </Link>
       </div>
     </div>
+    <Footer />
     </div>
     );
   }
