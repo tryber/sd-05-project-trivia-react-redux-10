@@ -127,8 +127,7 @@ class Settings extends React.Component {
             <Link to="/">
               <button
                 type="button"
-                className="btn btn-lg btn-success btn-block"
-                type="submit">
+                className="btn btn-lg btn-success btn-block">
                 Voltar para a Home
               </button>
             </Link>

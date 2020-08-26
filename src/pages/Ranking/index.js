@@ -17,11 +17,11 @@ class Ranking extends React.Component {
     const { rank } = this.props;
     const ranked = order(rank);
     return (
-      <div className="d-flex flex-column align-items-center">
+      <div className="ranking-container d-flex flex-column align-items-center">
         <div className="ranking d-flex flex-column text-center">
           <h1 className="rankingTitle" data-testid="ranking-title">
             Ranking
-            <img src={trophy} width="60px" height="60px" />
+            <img src={trophy} width="60px" height="60px" alt="Trophy" />
           </h1>
           <ReactAudioPlayer autoPlay loop src={champions} volume={0.5} />
           <Link to="/">
@@ -45,7 +45,7 @@ class Ranking extends React.Component {
                   <td data-testid={`player-score-${index}`}>{each.score}</td>
                   <td>
                     <img
-                      className="gravImg"
+                      className="gravImg mobile-excluded"
                       src={`https://www.gravatar.com/avatar/${each.imagePath}`}
                       alt="img"
                     />

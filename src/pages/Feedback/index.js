@@ -7,6 +7,8 @@ import gif2 from '../../assets/images/gif2.gif';
 import Footer from '../../components/footer/Footer.js';
 import sound from './levelComplete.mp3';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { getQuestions } from '../../actions';
+import { connect } from 'react-redux';
 
 class Feedback extends React.Component {
   constructor(props) {
@@ -16,6 +18,7 @@ class Feedback extends React.Component {
       score: 0,
     };
     this.starter = this.starter.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -30,22 +33,27 @@ class Feedback extends React.Component {
     });
   }
 
+  handleClick() {
+    const { questions } = this.props
+    questions([])
+  }
+
   render() {
     const { assertions, score } = this.state;
     return (
-      <div className="d-flex flex-column align-items-center text-center">
+      <div className="d-flex flex-column align-items-center text-center feedback-container">
         <ReactAudioPlayer autoPlay src={sound} volume={0.9} />
         <GameHeader />
         <div className="d-flex justify-content-center feedbackP">
           <div className="d-flex flex-column justify-content-around">
             {assertions < 3 ? (
               <div data-testid="feedback-text">
-                <img src={gif2} width="50px" height="50px" />
+                <img src={gif2} width="50px" height="50px" alt="Gif" />
                 Podia ser melhor...
               </div>
             ) : (
               <div data-testid="feedback-text">
-                <img src={gif1} width="50px" height="50px" />
+                <img src={gif1} width="50px" height="50px" alt="Gif" />
                 Mandou bem!
               </div>
             )}
@@ -58,12 +66,12 @@ class Feedback extends React.Component {
               <span data-testid="feedback-total-score">{score}</span>
             </div>
             <Link to="/">
-              <button className="btn btn-primary feedbackBut" type="button" data-testid="btn-play-again">
+              <button className="btn btn-primary feedbackBut" type="button" data-testid="btn-play-again" onClick={this.handleClick}>
                 Jogar Novamente
               </button>
             </Link>
             <Link to="/ranking">
-              <button className="btn btn-primary feedbackBut" type="button" data-testid="btn-ranking">
+              <button className="btn btn-primary feedbackBut" type="button" data-testid="btn-ranking" onClick={this.handleClick}>
                 Ranking
               </button>
             </Link>
@@ -75,4 +83,8 @@ class Feedback extends React.Component {
   }
 }
 
-export default Feedback;
+const mapDispatchToProps = (dispatch) => ({
+  questions: (a) => dispatch(getQuestions(a)),
+})
+
+export default connect(null, mapDispatchToProps)(Feedback);
