@@ -19,7 +19,6 @@ class Settings extends React.Component {
   }
 
   handleChange(e) {
-    console.log(e.target.name);
     const { name, value } = e.target;
     this.setState({
       [name]: value,

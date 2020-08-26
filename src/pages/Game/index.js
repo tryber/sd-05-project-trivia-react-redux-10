@@ -118,12 +118,11 @@ class Game extends React.Component {
     if (questions.length < 1) return <Loading />;
     if (QN > questions.length - 1) return <Feedback />;
     const dif = questions[QN].difficulty;
-    console.log(this.state);
     return (
       <div className="App-game App">
         <GameHeader detail="game-header"/>
         <main className="App-game-body">
-          <ReactAudioPlayer autoPlay loop src={music} volume={0.3} />
+          <ReactAudioPlayer autoPlay loop src={music} volume={0.5} />
           <div className="question-box-container ">
           {certa && <ReactAudioPlayer autoPlay src={certaRes} />}
           {errada && <ReactAudioPlayer autoPlay src={quePena} />}

@@ -2,7 +2,7 @@ import { SET_CONFIG } from '../actions';
 
 const INITIAL_CONFIG = {
   config: {
-    nQuestoes: 2,
+    nQuestoes: 5,
     cat: 'any',
     dificuldade: 'any',
     tipo: 'any',

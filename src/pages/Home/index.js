@@ -49,9 +49,7 @@ class Home extends React.Component {
       questions,
       allConfig,
     } = this.props;
-    console.log(allConfig);
     const { email, player } = this.state;
-    console.log(email, player);
     tokenAPI().then((data) => {
       setCurrentToken(data.token);
       localStorage.setItem('token', data.token);
@@ -81,7 +79,7 @@ class Home extends React.Component {
           <img src={logo} className="App-logo glitch" alt="logo" />
         </header>
         <main className="App-main">
-          <ReactAudioPlayer autoPlay loop src={sound} volume={0.3} />
+          <ReactAudioPlayer autoPlay loop src={sound} volume={0.5} />
           <label htmlFor="nome"></label>
           <div className="d-flex flex-column login">
             <Input
