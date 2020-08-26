@@ -49,7 +49,7 @@ class Loading extends React.Component {
         </div>}
         {returnHome && (
           <div className="return-home-container">
-            <h3>{`Houve algum problema :(`}</h3>
+            <h4>{`Houve algum problema :(`}</h4>
             <Link to="/">
               <button className="next">Retorne à Home</button>
             </Link>
