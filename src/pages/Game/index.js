@@ -9,6 +9,7 @@ import GameHeader from '../../components/GameHeader';
 import Answers from '../../components/Answers';
 import Question from '../../components/Question';
 import Feedback from '../Feedback';
+import Loading from '../../components/Loading'
 import Footer from '../../components/footer/Footer.js';
 import music from './suspense.mp3';
 import certaRes from './certaResposta.mp3';
@@ -117,7 +118,7 @@ class Game extends React.Component {
   render() {
     const { QN, time, showAnswer, DA, certa, errada } = this.state;
     const { questions } = this.props
-    if (questions.length < 1) return <h1>Loading...</h1>;
+    if (questions.length < 1) return <Loading />;
     if (QN > questions.length - 1) return <Feedback />;
     const dif = questions[QN].difficulty;
     console.log(this.state);
