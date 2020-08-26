@@ -188,37 +188,23 @@ body {
   color: white;
 }
 
-.right-answer {
-  background-color: rgb(6, 240, 15);
-  background-image: none;
-  border: 3px solid rgb(6, 240, 15);
-  color: black;
-  margin: 5px;
-}
-
-.wrong-answer {
-  background-color: red;
-  border: 3px solid red;
-  color: white;
-  margin: 5px;
-}
 
 .next {
-  background-color: black;
+  background-color: black !important;
   border-radius: 10px;
-  border: 2px solid white;
-  box-shadow: 5px 5px 10px black;
-  color: white;
-  cursor: pointer;
+  border: 2px solid white !important;
+  box-shadow: 5px 5px 10px black !important;
+  color: white !important;
+  cursor: pointer !important;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700 !important;
   padding: 15px;
   width: 200px;
 }
 
 .next:hover {
-  color: black;
-  background-color: white;
+  color: black !important;
+  background-color: white !important;
 }
 
 .disabled {
@@ -272,18 +258,18 @@ body {
   90% {
     transform: translate3d(-1px, 0, 0);
   }
-
+  
   20%,
   80% {
     transform: translate3d(2px, 0, 0);
   }
-
+  
   30%,
   50%,
   70% {
     transform: translate3d(-4px, 0, 0);
   }
-
+  
   40%,
   60% {
     transform: translate3d(4px, 0, 0);
@@ -301,6 +287,21 @@ body {
   font-weight: 700;
   padding: 12px 5px;
   width: 600px;
+  margin: 5px;
+}
+
+.right-answer {
+  background-color: rgb(6, 240, 15);
+  background-image: none;
+  border: 3px solid rgb(6, 240, 15);
+  color: black;
+  margin: 5px;
+}
+
+.wrong-answer {
+  background-color: red;
+  border: 3px solid red;
+  color: white;
   margin: 5px;
 }
 
@@ -542,6 +543,7 @@ body {
     background-color: black !important;
     border: 2px solid white !important;
     color: white !important;
+    font-size: 12px !important;
     font-weight: 600;
     margin-top: 20px;
     width: 100%;
@@ -617,14 +619,10 @@ body {
   .settings-container {
     width: 100%;
     position: relative;
-    bottom: 0;
+    bottom: 10;
   }
 
   .form-control {
-    font-size: 14px !important;
-  }
-
-  .btn {
     font-size: 14px !important;
   }
 
@@ -736,20 +734,20 @@ body {
   .settings-container {
     width: 100%;
     position: relative;
-    bottom: 30px;
+    bottom: 20px;
+  }
+
+  .settings-title {
+    font-size: 23px;
   }
 
   .form-control {
     font-size: 14px !important;
   }
 
-  .btn {
-    font-size: 14px !important;
-  }
-
   .settings {
     width: 100%;
-    padding: 20px;
+    padding: 10px;
   }
   /*Game*/
 
