@@ -31,7 +31,7 @@ class Settings extends React.Component {
 
     return (
       <div className="d-flex flex-column justify-content-center settings-container">
-        <ReactAudioPlayer autoPlay loop src={underground} volume={0.5} />
+        <ReactAudioPlayer autoPlay loop src={underground} volume={0.3} />
         <div className="text-center">
           <h1 data-testid="settings-title" className="settings-title">
             Settings

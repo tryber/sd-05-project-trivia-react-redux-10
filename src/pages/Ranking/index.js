@@ -23,7 +23,7 @@ class Ranking extends React.Component {
             Ranking
             <img src={trophy} width="60px" height="60px" />
           </h1>
-          <ReactAudioPlayer autoPlay loop src={champions} volume={0.6} />
+          <ReactAudioPlayer autoPlay loop src={champions} volume={0.5} />
           <Link to="/">
             <button className="btn btn-primary" type="button" data-testid="btn-go-home">
               Home
