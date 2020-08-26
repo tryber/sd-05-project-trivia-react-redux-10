@@ -4,7 +4,6 @@ import ReactAudioPlayer from 'react-audio-player';
 import { connect } from 'react-redux';
 import { questionAPI } from '../../Services/apiFunctions.js';
 import { getScore, rankMe } from '../../actions';
-import './style.css';
 import scoreCalculation from '../../Services/scoreCalculation';
 import GameHeader from '../../components/GameHeader';
 import Answers from '../../components/Answers';

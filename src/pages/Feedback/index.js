@@ -41,7 +41,7 @@ class Feedback extends React.Component {
   render() {
     const { assertions, score } = this.state;
     return (
-      <div className="d-flex flex-column align-items-center text-center">
+      <div className="d-flex flex-column align-items-center text-center feedback-container">
         <ReactAudioPlayer autoPlay src={sound} volume={0.9} />
         <GameHeader />
         <div className="d-flex justify-content-center feedbackP">

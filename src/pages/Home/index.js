@@ -42,15 +42,22 @@ class Home extends React.Component {
   }
 
   handleClick() {
-    const { setCurrentToken, setImgPath, setUser, questions, allConfig } = this.props;
-    console.log(allConfig)
+    const {
+      setCurrentToken,
+      setImgPath,
+      setUser,
+      questions,
+      allConfig,
+    } = this.props;
+    console.log(allConfig);
     const { email, player } = this.state;
     console.log(email, player);
     tokenAPI().then((data) => {
       setCurrentToken(data.token);
       localStorage.setItem('token', data.token);
-      questionAPI(data.token, allConfig)
-      .then(questoes => questions(questoes.results))
+      questionAPI(data.token, allConfig).then((questoes) =>
+        questions(questoes.results)
+      );
     });
     setImgPath(encrypted(email));
     setUser(player, email, 0);
@@ -98,8 +105,8 @@ class Home extends React.Component {
               </button>
             </Link>
           </div>
-          <Footer />
         </main>
+        <Footer />
       </div>
     );
   }
