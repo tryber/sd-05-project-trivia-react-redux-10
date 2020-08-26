@@ -48,12 +48,12 @@ class Feedback extends React.Component {
           <div className="d-flex flex-column justify-content-around">
             {assertions < 3 ? (
               <div data-testid="feedback-text">
-                <img src={gif2} width="50px" height="50px" />
+                <img src={gif2} width="50px" height="50px" alt="Gif" />
                 Podia ser melhor...
               </div>
             ) : (
               <div data-testid="feedback-text">
-                <img src={gif1} width="50px" height="50px" />
+                <img src={gif1} width="50px" height="50px" alt="Gif" />
                 Mandou bem!
               </div>
             )}

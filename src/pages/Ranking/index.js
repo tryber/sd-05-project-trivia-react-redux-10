@@ -21,7 +21,7 @@ class Ranking extends React.Component {
         <div className="ranking d-flex flex-column text-center">
           <h1 className="rankingTitle" data-testid="ranking-title">
             Ranking
-            <img src={trophy} width="60px" height="60px" />
+            <img src={trophy} width="60px" height="60px" alt="Trophy" />
           </h1>
           <ReactAudioPlayer autoPlay loop src={champions} volume={0.6} />
           <Link to="/">

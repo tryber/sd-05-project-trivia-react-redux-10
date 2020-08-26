@@ -428,6 +428,18 @@ body {
   color:white;
 }
 
+.return-home-container {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+}
+
+.return-home-container h3{
+  width: 100%;
+  padding: 30px;
+  color: white;
+}
+
 @media (max-width: 445px) {
   .App {
     height: 100vh;

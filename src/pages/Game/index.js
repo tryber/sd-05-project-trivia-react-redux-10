@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 import { connect } from 'react-redux';
-import { questionAPI } from '../../Services/apiFunctions.js';
 import { getScore, rankMe } from '../../actions';
 import scoreCalculation from '../../Services/scoreCalculation';
 import GameHeader from '../../components/GameHeader';
@@ -36,8 +35,6 @@ class Game extends React.Component {
 
   componentDidMount() {
     const timer = setInterval(this.tick, 1000);
-    const { token, allConfig, questions } = this.props;
-    console.log('MONTEI');
     this.setState({
     timer,
     });
