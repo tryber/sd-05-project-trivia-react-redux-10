@@ -15,9 +15,10 @@ body {
 }
 
 .App-logo {
+  margin: 0 !important;
   pointer-events: none;
-  margin-top: 2%;
-  width: 270px;
+  margin-top: 2% !important;
+  width: 240px;
 }
 
 .App-main {
@@ -34,7 +35,7 @@ body {
   background: rgba(0, 0, 0, 0.6);
   padding: 20px;
   border-radius: 20px;
-  width: 500px;
+  width: 470px;
 }
 
 .btn-text-jogar {
