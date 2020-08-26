@@ -5,9 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 class GameHeader extends React.Component {
   render() {
-    const { currentName, imgCurrentPath, currentScore } = this.props;
+    const { currentName, imgCurrentPath, currentScore, detail } = this.props;
     return (
-      <header className="App-game-header d-flex justify-content-center">
+      <header className={`App-game-header d-flex justify-content-center ${(detail)?"game-header":""}`}>
         <div className="head-size text-center">
           <p className="pScore">Gamer</p>
           <h3 className="pName" data-testid="header-player-name">

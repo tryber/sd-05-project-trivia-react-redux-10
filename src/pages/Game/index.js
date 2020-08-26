@@ -121,7 +121,7 @@ class Game extends React.Component {
     console.log(this.state);
     return (
       <div className="App-game App">
-        <GameHeader />
+        <GameHeader detail="game-header"/>
         <main className="App-game-body">
           <ReactAudioPlayer autoPlay loop src={music} volume={0.5} />
           <div className="question-box-container ">
